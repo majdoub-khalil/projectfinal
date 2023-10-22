@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="857.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Gestionuser1Controller">
+    <children>
+        <TableView fx:id="tableView" layoutX="63.0" layoutY="46.0" prefHeight="239.0" prefWidth="487.0" style="-fx-background-color: #f2f1a7;">
+            <columns>
+                <TableColumn fx:id="lundiColumn" text="Lundi">
+                    <cellValueFactory><PropertyValueFactory property="lundi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="mardiColumn" text="Mardi">
+                    <cellValueFactory><PropertyValueFactory property="mardi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="mercrediColumn" text="Mercredi">
+                    <cellValueFactory><PropertyValueFactory property="mercredi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="jeudiColumn" text="Jeudi">
+                    <cellValueFactory><PropertyValueFactory property="jeudi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="vendrediColumn" text="Vendredi">
+                    <cellValueFactory><PropertyValueFactory property="vendredi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="samediColumn" text="Samedi">
+                    <cellValueFactory><PropertyValueFactory property="samedi" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TextField fx:id="tabletext" layoutX="50.0" layoutY="370.0" prefWidth="500.0" style="-fx-background-color: #d5b8d9;" />
+        <Button fx:id="ajoutbtn" layoutX="71.0" layoutY="416.0" onAction="#handleAdd" text="Ajouter" />
+        <Button fx:id="suppbtn" layoutX="440.0" layoutY="416.0" text="Supprimer" />
+        <Button fx:id="modifbtn" layoutX="262.0" layoutY="416.0" onAction="#handleModify" text="Modifier" />
+        <Text layoutX="71.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="que voulez vous faire cette semaine:" />
+      <ImageView fitHeight="347.0" fitWidth="313.0" layoutX="546.0" layoutY="178.0">
+         <image>
+            <Image url="@../image/ccr.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSend" layoutX="148.0" layoutY="416.0" mnemonicParsing="false" onMouseClicked="#senDV" text="envoyer" />
+      <ImageView fx:id="refbtn" fitHeight="43.0" fitWidth="45.0" layoutX="564.0" layoutY="97.0" onMouseClicked="#refresh">
+         <image>
+            <Image url="@../image/refresh.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+    </children>
+</AnchorPane>

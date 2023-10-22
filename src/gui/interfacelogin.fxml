@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="722.0" prefWidth="846.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InterfaceloginController">
+   <children>
+      <TextField fx:id="nomuser" layoutX="223.0" layoutY="130.0" />
+      <Button fx:id="savebtn" layoutX="332.0" layoutY="548.0" mnemonicParsing="false" onAction="#log" onMouseClicked="#savepersonne" text="login" textFill="#0900bc" />
+      <Text fill="#1fe809" layoutX="144.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prénom" />
+      <Text fill="#0ad325" layoutX="150.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail" />
+      <Text fill="#0de82e" layoutX="111.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genre" />
+      <Text fill="#0bf235" layoutX="155.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" wrappingWidth="30.19775390625" />
+      <Text fill="#04ee0c" layoutX="72.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date de naissance" />
+      <TextField fx:id="prenomuser" layoutX="223.0" layoutY="172.0" />
+      <TextField fx:id="emailuser" layoutX="224.0" layoutY="220.0" />
+      <DatePicker fx:id="dateuser" layoutX="223.0" layoutY="319.0" />
+      <ComboBox fx:id="genreuser" layoutX="250.0" layoutY="265.0" prefWidth="150.0" />
+      <PasswordField fx:id="mdpuser" layoutX="223.0" layoutY="381.0" />
+      <Text fill="#06e851" layoutX="82.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mot de passe" />
+      <Text fill="#09eb2b" layoutX="26.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="confirmer le mot de passe" />
+      <PasswordField fx:id="mdp2user" layoutX="223.0" layoutY="429.0" />
+      <Button fx:id="test" layoutX="248.0" layoutY="548.0" mnemonicParsing="false" onAction="#logt" text="sign up" />
+      <Text fill="#ff7c3b" fontSmoothingType="LCD" layoutX="231.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="changer votre mot de passe" textAlignment="CENTER" underline="true" />
+      <ImageView fitHeight="604.0" fitWidth="382.0" layoutX="462.0" layoutY="118.0">
+         <image>
+            <Image url="@../image/image-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="146.0" fitWidth="851.0" layoutX="-25.0">
+         <image>
+            <Image url="@../image/385484300_1361238801171916_2564928540717958165_n-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
