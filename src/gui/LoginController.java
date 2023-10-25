@@ -1,11 +1,7 @@
-package gui;
-
 import edu.esprit.entities.Personne;
 import edu.esprit.services.PersonneCRUD;
 import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
+import javafx.scene.Cursor;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -13,6 +9,14 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
@@ -25,25 +29,25 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Vous pouvez initialiser des éléments si nécessaire
+      
     }
 
     @FXML
     private void connecter() {
         String emailValue = emaillog.getText();
         String passwordValue = mdplogin.getText();
+
         
-        // Vous pouvez ajouter du code pour vérifier si l'email et le mot de passe sont corrects
         PersonneCRUD PC = new PersonneCRUD();
         try {
             Personne personne = PC.authentifier(emailValue, passwordValue);
-            
+
             if (personne != null) {
-                // L'email et le mot de passe sont corrects
+                
                 String message = "Welcome, " + personne.getNom() + "!";
                 afficherMessageInformation(message);
             } else {
-                // L'email ou le mot de passe est incorrect
+                
                 afficherMessageErreur("Erreur", "Email ou mot de passe incorrect");
             }
         } catch (SQLException e) {
@@ -67,4 +71,30 @@ public class LoginController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    @FXML
+    private void openmodifpass(MouseEvent event) {
+         try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/modifpass.fxml"));
+            Parent root = loader.load();
+
+          
+            Scene scene = new Scene(root);
+
+           
+            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+            
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.show();
+
+            
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+        

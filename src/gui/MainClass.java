@@ -15,7 +15,7 @@ public class MainClass extends Application {
         WelcomeController welcomeController = loader.getController();
         
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Votre titre ici");
+        primaryStage.setTitle("FITNATIC");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
